@@ -1,0 +1,329 @@
+0000000;Índice Geral 
+1000000;Alimentação e Bebidas 
+1100000;Alimentação no Domicílio 
+1101000;Cereais, Leguminosas e oleaginosas 
+1101002;Arroz
+1101051;Feijão - mulatinho
+1101053;Feijão - macassar (Fradinho)
+1101073;Feijão - carioca (rajado) 
+1102000;Farinha, féculas e massas
+1102001;farinha de arroz
+1102006;macarrão
+1102008;fubá de milho 
+1102010;flocos de milho
+1102023;farinha de mandioca
+1103000;Tubérculos, Raízes e Legumes 
+1103003;Batata-inglesa
+1103004;Inhame
+1103005;mandioca (aipim)
+1103028;Tomate
+1103043;Cebola
+1104000;Açúcares e derivados
+1104004;Açúcar cristal
+1104023;chocolate em barra e bombom 
+1104032;Sorvete 
+1104052;Chocolate e achocolatado em pó
+1105000;Hortaliças e Verduras
+1105001;Alface
+1105004;Coentro
+1106000;Frutas
+1106001;banana - da - terra 
+1106003;abacaxi
+1106008;banana - prata
+1106017;maçã
+1106018;mamão
+1106019;manga
+1106021;melancia
+1106028;uva
+1106039;laranja - pera
+1107000;Carnes
+1107009;fígado
+1107081;cupim
+1107084;contrafilé
+1107087;chã de dentro
+1107088;alcatra
+1107089;patinho
+1107093;músculo
+1107094;pá
+1107095;acém
+1107099;costela
+1108000;Pescados
+1108004;corvina
+1108005;cavalinha
+1108012;sardinha
+1108013;camarão
+1108031;merluza
+1108038;pescada
+1108049;castanha
+1108080;tilápia
+1109000;Carnes e peixes industrializados 
+1109007;salsicha
+1109008;linguiça 
+1109010;mortadela
+1109056;carne seca e de sol 
+1109088;hambúrguer
+1110000;Aves e ovos
+1110009;frango inteiro
+1110010;frango em pedaços
+1110044;ovo de galinha
+1111000;Leite e derivados
+1111004;leite longa vida
+1111008;leite condensado
+1111009;leite em pó
+1111011;queijo
+1111019;iogurte e bebidas lácteas
+1111031;manteiga
+1111051;leite com sabor
+1112000;Panificados
+1112003;biscoito
+1112015;pão francês
+1112019;bolo
+1113000;Óleos e gorduras
+1113013;óleo de soja
+1113040;margarina
+1114000;Bebidas e infusões
+1114001;suco de frutas
+1114022;café moído
+1114023;café solúvel
+1114083;refrigerante e água mineral
+1114084;cerveja
+1114085;outras bebidas alcoólicas
+1115000;Enlatados e conservas
+1115039;sardinha em conserva
+1115050;salsicha em conserva
+1115051;carne em conserva
+1115058;milho-verde em conserva
+1116000;Sal e condimentos
+1116005;atomatado
+1116010;alho
+1116033;maionese
+1116041;vinagre
+1116048;caldo concentrado
+1116071;tempero misto
+1200000;Alimentação fora do domicílio
+1201000;Alimentação fora do domicílio
+1201001;refeição
+1201003;lanche
+1201005;café da manhã
+1201007;refrigerante e água mineral
+1201048;cerveja
+1201051;outras bebidas alcoólicas
+1201061;doces
+2000000;Habitação
+2100000;Encargos e manutenção
+2101000;Aluguel e taxas
+2101001;aluguel residencial
+2101002;condomínio
+2101004;taxa de água e esgoto
+2103000;Reparos
+2103014;tinta
+2103032;revestimento de piso e parede
+2103039;cimento
+2103040;tijolo
+2103041;material hidráulico
+2103042;mão de obra
+2103048;areia
+2104000;Artigos de limpeza
+2104005;água sanitária
+2104008;detergente
+2104009;sabão em pó
+2104015;sabão em barra
+2104016;esponja de limpeza
+2200000;Combustíveis e energia
+2201000;Combustíveis (domésticos)
+2201004;gás de botijão
+2202000;Energia elétrica residencial
+2202003;Energia elétrica residencial
+3000000;Artigos de residência
+3100000;Móveis e utensílios
+3101000;Mobiliário
+3101002;Móvel para sala
+3101003;Móvel para quarto
+3101015;Móvel para copa e cozinha
+3101016;Móvel infantil
+3101017;Colchão
+3102000;Utensílios e enfeites
+3102005;tapete
+3102006;cortina
+3102007;utensílios de metal
+3102009;utensílios de vidro e louça
+3102010;utensílios de plástico
+3102040;utensílios diversos
+3103000;Cama, mesa e banho
+3103001;roupa de cama
+3103003;roupa de banho
+3200000;Aparelhos eletroeletrônicos
+3201000;Eletrodomésticos e equipamentos
+3201001;refrigerador
+3201006;máquina de lavar roupa
+3201012;liquidificador
+3201013;ventilador
+3201021;fogão
+3202000;TV, som e informática
+3202001;televisor
+3202003;aparelho de som
+3202005;aparelho de DVD
+3202013;antena
+3202028;microcomputador
+3300000;Consertos e manutenção
+3301000;Consertos e manutenção
+3301002;conserto de refrigerador
+3301006;conserto de televisor
+3301009;conserto de aparelho de som
+3301022;reforma de estofado
+4000000;Vestuário
+4100000;Roupas
+4101000;Roupa masculina
+4101002;calça comprida masculina
+4101006;short e bermuda masculina
+4101008;cueca
+4101009;camisa/camiseta masculina
+4102000;roupa feminina
+4102002;calça comprida feminina
+4102004;saia
+4102005;vestido
+4102008;blusa
+4102010;lingerie
+4102013;bermuda e short feminino
+4103000;Roupa infantil
+4103002;calça comprida infantil
+4103007;vestido infantil
+4103008;bermuda e short infantil
+4103011;camisa/camiseta infantil
+4103031;conjunto infantil
+4200000;Calçados e acessórios
+4201000;Calçados e acessórios
+4201002;sapato masculino
+4201003;sapato feminino
+4201004;sapato infantil
+4201006;sandália/chinelo masculino
+4201007;sandália/chinelo feminino
+4201008;sandália/chinelo infantil
+4201015;bolsa
+4201063;tênis
+4300000;Jóias e bijuterias
+4301000;Jóias e bijuterias
+4301001;bijuteria
+4301002;jóia 
+4301004;relógio de pulso
+4400000;Tecidos e armarinho
+4401000;Tecidos e armarinho
+4401001;tecido 
+4401002;artigos de armarinho
+5000000;Transportes
+5100000;Transportes
+5101000;Transporte público
+5101001;ônibus urbano
+5101002;táxi
+5101006;ônibus intermunicipal
+5101007;ônibus intererstadual
+5101010;passagem aérea
+5102000;Veículo próprio
+5102001;automóvel novo
+5102004;emplacamento e licença
+5102007;óleo lubrificante
+5102009;acessórios e peças
+5102010;pneu
+5102011;conserto de automóvel
+5102020;automóvel usado
+5102053;motocicleta
+5104000;Combustíveis (veículos)
+5104001;gasolina
+5104002;etanol
+5104005;gás veicular
+6000000;Saúde e cuidados pessoais
+6100000;Produtos farmacêuticos e óticos
+6101000;Produtos farmacêuticos  
+6101001;anti-infeccioso e antibiótico
+6101002;analgésico e antitérmico
+6101003;anti-inflamatório e antirreumático
+6101004;antigripal e antitussígeno
+6101006;dermatológico
+6101007;antialérgico e broncodilatador
+6101009;gastroprotetor
+6101010;vitamina e fortificante
+6101011;hormônio
+6101013;psicotrópico e anorexígeno
+6101014;hipotensor e hipocolesterolêmico
+6101051;oftalmológico
+6102000;Produtos óticos
+6102003;óculos sem grau
+6102011;lentes de óculos e de contato
+6200000;Serviços de saúde
+6201000;Serviços médicos e dentários
+6201002;médico
+6201003;dentista
+6201005;aparelho ortodôntico
+6202000;Serviços laboratoriais e hospitalares
+6202003;exame de laboratório
+6202004;hospitalização e cirurgia
+6202006;exame de imagem
+6203000;Plano de saúde
+6203001;plano de saúde
+6300000;Cuidados pessoais
+6301000;Higiene pessoal
+6301001;produto para cabelo
+6301002;fralda descartável
+6301006;produto para pele
+6301007;produto para higiene bucal
+6301010;produto para unha
+6301011;perfume
+6301014;desodorante
+6301015;absorvente higiênico
+6301016;sabonete
+6301017;papel higiênico
+6301020;artigos de maquiagem
+7000000;Despesas pessoais
+7100000;Serviços pessoais
+7101000;Serviços pessoais
+7101001;costureira
+7101005;manicure
+7101009;cabelereiro
+7101010;empregado doméstico
+7101034;cartório
+7101076;serviço bancário
+7200000;Recreação, fumo e fotografia
+7201000;Recreação  
+7201001;cinema
+7201002;CD e DVD
+7201018;tratamento de animais
+7201019;bicicleta
+7201020;alimento para animais
+7201023;brinquedo
+7201052;locação de DVD
+7201054;festas diversas
+7201063;jogos de azar
+7201090;hotel
+7202000;Fumo
+7202041;cigarro
+7203000;Fotografia e filmagem
+7203001;máquina fotográfica
+7203003;revelação e cópia
+8000000;Educação
+8100000;Cursos, leitura e papelaria
+8101000;Cursos regulares
+8101001;creche
+8101002;educação infantil
+8101003;ensino fundamental
+8101004;ensino médio
+8101005;ensino superior
+8101006;pós-graduação
+8102000;Leitura
+8102004;revista
+8102005;livro
+8103000;Papelaria
+8103001;caderno
+8103002;fotocópia
+8103014;artigos de papelaria
+8104000;Cursos diversos
+8104001;curso preparatório
+8104004;curso de informática
+8104006;atividades físicas
+9000000;Comunicação
+9100000;Comunicação
+9101000;Comunicação
+9101002;telefone fixo
+9101008;telefone celular
+9101018;acesso à internet
+9101019;aparelho telefônico
+9101021;telefone com internet - pacote
