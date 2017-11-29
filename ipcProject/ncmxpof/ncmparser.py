@@ -37,6 +37,9 @@ mandiocaFilter     = ['OUTROS"', 'MANGARITOS', 'TAROS', 'BATATASDOCES"', 'DIOSCO
 
 tomateFilter       = ['SUCOS']
 
+cebolaFilter       = ['SEMEADURA']
+
+
 def csvNcmParser(csv_fileUrl, ncm_descript):
     '''
     Recieves a csv URL, extracts code and description
@@ -116,12 +119,12 @@ if __name__ == '__main__':
     # pofFinder("farinha de arroz", farinhaArrozFilter, "Farinhas de cereais, exceto de trigo ou de "
                                                       #"mistura de trigo com centeio (méteil)")
 
-    #pofFinder("macarrão", macarraoFilter, "Massas alimentícias, mesmo cozidas")
+    # pofFinder("macarrão", macarraoFilter, "Massas alimentícias, mesmo cozidas")
 
-    #pofFinder("fubá de milho ", [], "Farinhas de cereais, exceto de trigo ou de mistura"
+    # pofFinder("fubá de milho ", [], "Farinhas de cereais, exceto de trigo ou de mistura"
                                     #" de trigo com centeio (méteil).- Farinha de milho")
 
-    #pofFinder("flocos de milho", flocosMilhoFilter, "Grãos de cereais trabalhados de outro modo "
+    # pofFinder("flocos de milho", flocosMilhoFilter, "Grãos de cereais trabalhados de outro modo "
                                                     #"(por exemplo, descascados, esmagados, em flocos, "
                                                     #"em pérolas, cortados ou partidos), com exclusão do"
                                                     #" arroz da posição 10.06")
@@ -144,52 +147,158 @@ if __name__ == '__main__':
     #                                              " batatas-doces e raízes ou tubérculos semelhantes,"    )
 
     # pofFinder("Tomate", tomateFilter, "Tomates")
-    pofFinder("Cebola", [], "Cebolas")    # yet to test
-    # "Açúcares e derivados"
-    # "Açúcar cristal"
-    # "chocolate em barra e bombom "
-    # "Sorvete "
-    # "Chocolate e achocolatado em pó"
-    # "Hortaliças e Verduras"
-    # "Alface"
-    # "Coentro"
-    # "Frutas"
-    # "banana - da - terra "
-    # "abacaxi"
-    # "banana - prata"
-    # "maçã"
-    # "mamão"
-    # "manga"
-    # "melancia"
-    # "uva"
-    # "laranja - pera"
-    # "Carnes"
-    # "fígado"
-    # "cupim"
-    # "contrafilé"
-    # "chã de dentro"
-    # "alcatra"
-    # "patinho"
-    # "músculo"
-    # "pá"
-    # "acém"
-    # "costela"
-    # "Pescados"
-    # "corvina"
-    # "cavalinha"
-    # "sardinha"
-    # "camarão"
-    # "merluza"
-    # "pescada"
-    # "castanha"
-    # "tilápia"
-    # "Carnes e peixes industrializados "
-    # "salsicha"
-    # "linguiça "
-    # "mortadela"
-    # "carne seca e de sol "
-    # "hambúrguer"
-    # "Aves e ovos"
+
+    # pofFinder("Cebola", cebolaFilter, "Cebolas")
+
+    # Açúcares:
+    # pofFinder("Açúcar cristal", [], "Açúcares de cana ou de beterraba e sacarose quimicamente pura,
+    #                                 " no estado sólido.- Outros:-- Outros")
+
+    # BomBom
+    # pofFinder("chocolate em barra e bombom ", [], "Chocolate e outras preparações alimentícias que contenham cacau."
+    #                                               "- Outros, em tabletes, barras e paus:-- Recheados - Chocolate")
+    # Barra
+    # pofFinder("chocolate em barra e bombom ", [], "Chocolate e outras preparações alimentícias que contenham cacau."
+    #                                               "- Outros, em tabletes, barras e paus:-- Não recheados - Chocolate")
+
+    # pofFinder("Sorvete ", [], "Sorvetes")
+
+    # pofFinder("Chocolate e achocolatado em pó", [], "Chocolate e outras preparações alimentícias que contenham cacau."
+    #                                                 "- Cacau em pó")
+
+    # Hortaliças e Verduras:
+    # pofFinder("Alface", [], "Alfaces")
+
+    # pofFinder("Coentro", [], "Outros produtos hortícolas, frescos ou refrigerados.-"
+    #                          " Outros:-- Outros - Outros") # needs deeper verification
+
+    # Frutas:
+
+    # pofFinder("banana - da - terra ", [], "Bananas, incluindo as bananas-da-terra, frescas ou secas."
+    #                                       "- Bananas-da-terra")
+
+    # pofFinder("abacaxi", [], "Tâmaras, figos, abacaxis (ananases), abacates, goiabas, mangas e mangostões,"
+    #                          " frescos ou secos.- Abacaxis (ananases)")
+
+    # pofFinder("banana - prata", [], "Bananas, incluindo as bananas-da-terra, frescas ou secas.- Outras")
+
+    # pofFinder("maçã", [], "Maçãs, peras e marmelos, frescos.- Maçãs")
+
+    # pofFinder("mamão", [], "Melões, melancias e mamões (papaias), frescos."
+    #                        "- Mamões (papaias)")
+
+    # pofFinder("manga", [], "Tâmaras, figos, abacaxis (ananases), abacates, goiabas, mangas e mangostões,"
+    #                        " frescos ou secos.- Goiabas, mangas e mangostões - Mangas")
+
+    # pofFinder("melancia", [], "Melões, melancias e mamões (papaias), frescos.- Melões e melancias:-- Melancias")
+
+    # pofFinder("uva", [], "Uvas frescas ou secas (passas).- Frescas")
+
+    # pofFinder("laranja - pera", [], "Frutos cítricos, frescos ou secos.- Laranjas") #needs deeper verification
+
+    # Carnes:
+    # Fígado Bovino
+    # pofFinder("fígado", [], "Miudezas comestíveis de animais das espécies bovina, suína, ovina, caprina, cavalar,"
+    #                         " asinina e muar, frescas, refrigeradas ou congeladas.- Da espécie bovina, congeladas:"
+    #                         "-- Fígados")
+    # Fígado Suíno:
+    # pofFinder("fígado", [], "Miudezas comestíveis de animais das espécies bovina, suína, ovina, caprina, cavalar,"
+    #                         " asinina e muar, frescas, refrigeradas ou congeladas.-Outros- Da espécie suína,"
+    #                         " congeladas:-- Fígados")
+
+
+    # pofFinder("cupim", [], "Carnes de animais da espécie bovina, congeladas."
+    #                        " - Desossadas") # needs deeper verification
+    # pofFinder("cupim", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                        " - Desossadas") # needs deeper verification
+
+    # pofFinder("contrafilé", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                             " - Desossadas") # needs deeper verification
+    # pofFinder("contrafilé", [], "Carnes de animais da espécie bovina, congeladas. - Desossadas")
+
+    # pofFinder("chã de dentro", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                                " - Desossadas") # needs deeper verification
+    # pofFinder("chã de dentro", [], "Carnes de animais da espécie bovina, congeladas. - Desossadas")
+
+    # pofFinder("alcatra", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                          " - Desossadas") # needs deeper verification
+    # pofFinder("alcatra", [], "Carnes de animais da espécie bovina, congeladas. - Desossadas")
+
+
+    # pofFinder("patinho", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                          " - Desossadas") # needs deeper verification
+    # pofFinder("patinho", [], "Carnes de animais da espécie bovina, congeladas."
+    #                          " - Desossadas")# needs deeper verification
+
+    # pofFinder("músculo", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                          " - Desossadas")  # needs deeper verification
+    # pofFinder("músculo", [], "Carnes de animais da espécie bovina, congeladas."
+    #                          " - Desossadas")  # needs deeper verification
+
+    # pofFinder("pá", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                     " - Desossadas")  # needs deeper verification
+    # pofFinder("pá", [], "Carnes de animais da espécie bovina, congeladas."
+    #                     " - Desossadas")  # needs deeper verification
+
+    # pofFinder("acém", [], "Carnes de animais da espécie bovina, frescas ou refrigeradas."
+    #                       " - Desossadas")  # needs deeper verification
+    # pofFinder("acém", [], "Carnes de animais da espécie bovina, congeladas."
+    #                       " - Desossadas")  # needs deeper verification
+
+    # pofFinder("costela", [], "-- Toucinhos entremeados e seus pedaços"
+    #                          "-- Outras") # needs deeper verification
+
+    # pofFinder("costela", [], "Carnes de animais da espécie bovina, congeladas."
+    #                          " - Congeladas:-- Outras") # needs deeper verification
+
+
+    # Pescados:
+
+    # pofFinder("corvina", [], "Corvina")
+
+    # pofFinder("cavalinha", [], " -- Cavalinhas (Scomber scombrus, Scomber australasicus,"
+    #                            " Scomber japonicus)")
+
+    # pofFinder("sardinha", [], "-- Sardinhas e anchoveta - Sardinhas")
+
+    # pofFinder("camarão", [], "Camarões")
+
+    # pofFinder("merluza", [], "Merluza")
+
+    # pofFinder("pescada", [], "Pescadas")
+
+    # pofFinder("castanha", [], "- Outros peixes, exceto fígados, ovas e sêmen:Outros")
+
+    # Tilápias
+    # pofFinder("tilápia", [], "-- Tilápias (Oreochromis spp.)")
+    # pofFinder("tilápia", [], "Tilápias (Tilapia spp., Sarotherodon spp., Danakilia spp.")
+
+
+    # Carnes e peixes industrializados:
+
+    # pofFinder("salsicha", [], 'Enchidos e produtos semelhantes, de carne,'
+    #                           ' de miudezas ou de sangue') # needs deeper verification
+
+    # pofFinder("linguiça ", [], 'Enchidos e produtos semelhantes, de carne,'
+    #                            ' de miudezas ou de sangue') # needs deeper verification
+
+    # pofFinder("mortadela", [], 'Enchidos e produtos semelhantes, de carne,'
+    #                            ' de miudezas ou de sangue') # needs deeper verification
+
+    # pofFinder("carne seca e de sol ", [], " farinhas e pós, comestíveis, de carnes ou de "
+    #                                       "miudezas.- Carnes da"
+    #                                       " espécie bovina")  # needs deeper verification
+
+    # hambuger de frango:
+    pofFinder("hambúrguer", [], "- De aves da posição 01.05:"
+                                "-- De galos e de galinhas - Outras") # needs deeper verification
+    # hamburguer de boi:
+    pofFinder("hambúguer", [], "Outras preparações e conservas de carne, de miudezas ou de sangue."
+                               "- Da espécie bovina") # needs deeper verification
+
+    # Aves e ovos:
+
+    pofFinder("frango inteiro", [], "")
     # "frango inteiro"
     # "frango em pedaços"
     # "ovo de galinha"

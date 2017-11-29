@@ -12,7 +12,7 @@ class Pof(models.Model):
 
 class Ncm(models.Model):
     cod      = models.BigIntegerField()
-    descript = models.CharField(max_length=500)
+    descript = models.CharField(max_length=900)
     pof      = models.ForeignKey(Pof, on_delete=models.CASCADE)
 
     def __unicode__(self):
