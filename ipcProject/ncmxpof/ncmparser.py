@@ -39,6 +39,10 @@ tomateFilter       = ['SUCOS']
 
 cebolaFilter       = ['SEMEADURA']
 
+ovoFilter          = ['INCUBA\xc3\xa7\xc3\xa3O']
+
+condensadoFilter   = ['DESNATADO', 'INTEGRAL']
+
 
 def csvNcmParser(csv_fileUrl, ncm_descript):
     '''
@@ -70,6 +74,12 @@ def csvNcmParser(csv_fileUrl, ncm_descript):
 
     return ncm_list
 
+def queryToList(querySet):
+    list_a = []
+    for object in querySet:
+        list_a.append(object['ncm__cod'])
+    return list_a
+
 def pofFinder(pof_descript, filter_list, ncm_descript):
     '''
     Finds its NCM correlative and saves it
@@ -77,22 +87,32 @@ def pofFinder(pof_descript, filter_list, ncm_descript):
     :return:
     '''
 
-    pof = Pof.objects.get(descript=pof_descript)
+    pofs = Pof.objects.filter(descript=pof_descript)
     ncm_list = csvNcmParser("ncmtable/Tabela_NCM.csv", ncm_descript.upper())
     print ncm_list
-    print "\n"+pof_descript
+    print "\n"
 
-    for ncm in ncm_list:
-         ncm_normalized_descript = normalizer(ncm.descript)
-         print "\nNCM KEY WORDS:"
-         print ncm_normalized_descript
-         if any(word in ncm_normalized_descript for word in filter_list):
-            print "didn't passed"
-         else:
-            print "passed"
-            new_ncm     = ncmRefresher(ncm)
-            new_ncm.pof = pof
-            new_ncm.save()
+    for pof in pofs:
+        print "#######################\nPOF: ", pof.cod, pof.descript
+        for ncm in ncm_list:
+            ncm_query = Pof.objects.filter(ncm__cod=ncm.cod, cod=pof.cod).values('ncm__cod')
+            ncm_query = queryToList(ncm_query)
+            print "NCM: ", ncm.cod, ncm.descript
+            if ncm.cod in ncm_query:
+                print ncm_query
+                print "NCM already linked to POF\n"
+                break
+            else:
+                ncm_normalized_descript = normalizer(ncm.descript)
+                print "\nNCM KEY WORDS:"
+                print ncm_normalized_descript
+                if any(word in ncm_normalized_descript for word in filter_list):
+                    print "didn't passed\n"
+                else:
+                    print "passed\n"
+                    new_ncm     = ncmRefresher(ncm)
+                    new_ncm.pof = pof
+                    new_ncm.save()
 
 def normalizer(string):
     string = string.upper().replace('(', ' ').replace(')', ' ').replace(':', '')
@@ -259,7 +279,7 @@ if __name__ == '__main__':
     # pofFinder("cavalinha", [], " -- Cavalinhas (Scomber scombrus, Scomber australasicus,"
     #                            " Scomber japonicus)")
 
-    # pofFinder("sardinha", [], "-- Sardinhas e anchoveta - Sardinhas")
+    # pofFinder("sardinha", [], "03.04. -- Sardinhas (Sardina pilchardus, Sardinops spp., Sardinella spp.), anchoveta (Sprattus sprattus)")
 
     # pofFinder("camarão", [], "Camarões")
 
@@ -289,61 +309,114 @@ if __name__ == '__main__':
     #                                       "miudezas.- Carnes da"
     #                                       " espécie bovina")  # needs deeper verification
 
-    # hambuger de frango:
-    pofFinder("hambúrguer", [], "- De aves da posição 01.05:"
-                                "-- De galos e de galinhas - Outras") # needs deeper verification
+    # # hambuger de frango:
+    # pofFinder("hambúrguer", [], "- De aves da posição 01.05:"
+    #                             "-- De galos e de galinhas - Outras") # needs deeper verification
     # hamburguer de boi:
-    pofFinder("hambúguer", [], "Outras preparações e conservas de carne, de miudezas ou de sangue."
-                               "- Da espécie bovina") # needs deeper verification
+    # pofFinder("hambúrguer", [], "Outras preparações e conservas de carne, de miudezas ou de sangue."
+    #                            "- Da espécie bovina") # needs deeper verification
 
     # Aves e ovos:
 
-    pofFinder("frango inteiro", [], "")
-    # "frango inteiro"
-    # "frango em pedaços"
-    # "ovo de galinha"
-    # "Leite e derivados"
-    # "leite longa vida"
-    # "leite condensado"
-    # "leite em pó"
-    # "queijo"
-    # "iogurte e bebidas lácteas"
-    # "manteiga"
-    # "leite com sabor"
-    # "Panificados"
-    # "biscoito"
-    # "pão francês"
-    # "bolo"
-    # "Óleos e gorduras"
-    # "óleo de soja"
-    # "margarina"
-    # "Bebidas e infusões"
-    # "suco de frutas"
-    # "café moído"
-    # "café solúvel"
-    # "refrigerante e água mineral"
-    # "cerveja"
+    # pofFinder("frango inteiro", [], " das aves da posição 01.05.- De galos e de galinhas:"
+    #                                 "-- Não cortadas em pedaços")
+    # pofFinder("frango em pedaços", [], "das aves da posição 01.05.- De galos e de galinhas:"
+    #                                    "-- Pedaços e miudezas")
+
+    # pofFinder("ovo de galinha", ovoFilter, "Ovos de aves, com casca, frescos, conservados ou cozidos.")
+
+
+    # Leite e derivados:
+    # pofFinder("leite longa vida", [], "Leite e creme de leite, não concentrados nem adicionados de açúcar"
+    #                                   " ou de outros edulcorantes.Leite UHT (Ultra High Temperature)")
+
+    # pofFinder("leite condensado", condensadoFilter, "Leite e creme de leite, concentrados ou adicionados de açúcar"
+    #                                                 " ou de outros edulcorantes. -- Outros") # needs deeper verification
+
+    # pofFinder("leite em pó", [], "Leite e creme de leite, concentrados ou adicionados de açúcar ou de outros"
+    #                              " edulcorantes. Leite integral")
+
+    # pofFinder("queijo", [], "Queijos e requeijão.- Queijos frescos (não curados), incluindo o queijo de"
+    #                         " soro de leite, e o requeijão")
+
+    # pofFinder("iogurte e bebidas lácteas", [], " açúcar ou de outros edulcorantes, ou aromatizados ou "
+    #                                            "adicionados de frutas ou de cacau.")
+
+    # pofFinder("manteiga", [], " - Manteiga")
+
+    # pofFinder("leite com sabor", [], "Leite e creme de leite, não concentrados nem adicionados de açúcar"
+    #                                  " ou de outros edulcorantes.Outros") # needs deeper verification
+
+    # Panificados:
+
+    # pofFinder("biscoito", [], " e produtos semelhantes.- Bolachas e biscoitos, adicionados de edulcorante")
+
+    # pofFinder("pão francês", [], "amido ou fécula, em folhas, e produtos semelhantes.- Outros - Outros")
+
+    # pofFinder("bolo", [], "amido ou fécula, em folhas, e produtos semelhantes.- Outros - Outros")
+
+    # Óleos e gorduras:
+
+    # pofFinder("óleo de soja", [], "quimicamente modificados.- Outros - Em recipientes com capacidade "
+    #                               "inferior ou igual a 5 litros")
+
+    # pofFinder("margarina", [], "óleos alimentícios e respectivas frações da posição 15.16."
+    #                            "- Margarina, exceto a margarina líquida")
+
+    # Bebidas e infusões:
+    # pofFinder("suco de frutas", [], "Suco (sumo)")
+
+    # pofFinder("café moído", [], "cascas e películas de café")
+
+    # pofFinder("café solúvel", [], "-- Extratos, essências e concentrados"
+    #                               " - Café solúvel, mesmo descafeinado")
+
+    # pofFinder("refrigerante e água mineral", [], "- Águas, incluindo as águas minerais e as "
+    #                                              "águas gaseificadas, adicionadas de açúcar"
+    #                                              " ou de outros edulcorantes ou aromatizadas") # needs deeper verification
+
+    # pofFinder("cerveja", [], "Cervejas de malte.")
+
     # "outras bebidas alcoólicas"
-    # "Enlatados e conservas"
-    # "sardinha em conserva"
-    # "salsicha em conserva"
-    # "carne em conserva"
-    # "milho-verde em conserva"
-    # "Sal e condimentos"
-    # "atomatado"
-    # "alho"
-    # "maionese"
-    # "vinagre"
-    # "caldo concentrado"
-    # "tempero misto"
+    # pofFinder("outras bebidas alcoólicas", [], "misturas de bebidas fermentadas com bebidas não alcoólicas,"
+    #                                            " não especificadas nem compreendidas noutras posições.")
+    #
+    # pofFinder("outras bebidas alcoólicas", [], "Álcool etílico não desnaturado, com um teor alcoólico, em volume")
+    #
+    # pofFinder("outras bebidas alcoólicas", [], "vinhos")
+
+    # Enlatados e conservas:
+    # pofFinder("sardinha em conserva", [], "-- Sardinhas e anchoveta - Sardinhas")
+
+    # pofFinder("salsicha em conserva", [], "Enchidos e produtos semelhantes, de carne,"
+    #                                       " de miudezas ou de sangue") # needs deeper verification
+
+    # pofFinder("carne em conserva", [], "de carne, de miudezas ou de sangue.- Da espécie bovina")
+
+    # pofFinder("milho-verde em conserva", [], "Milho doce (Zea mays var. saccharata)")
+
+    # Sal e condimentos:
+    # pofFinder("atomatado", [], "exceto em vinagre ou em ácido acético.- Tomates inteiros ou em pedaços")
+
+    # pofFinder("alho", [], ' misturas de produtos hortícolas - Alho em pó')
+
+    # pofFinder("maionese", [], "condimentos e temperos compostos")
+
+    # pofFinder("vinagre", [], "Vinagres e seus sucedâneos obtidos a partir do ácido acético,"
+    #                          " para usos alimentares")
+
+    # pofFinder("caldo concentrado", [], "caldos e sopas preparados")
+
+    # pofFinder("tempero misto", [], "condimentos e temperos compostos")
+
     # "Alimentação fora do domicílio"
     # "Alimentação fora do domicílio"
     # "refeição"
     # "lanche"
     # "café da manhã"
-    # "refrigerante e água mineral"
-    # "cerveja"
-    # "outras bebidas alcoólicas"
+    # "refrigerante e água mineral" # done
+    # "cerveja" # done
+    # "outras bebidas alcoólicas" # done
     # "doces"
     # "Habitação"
     # "Encargos e manutenção"
