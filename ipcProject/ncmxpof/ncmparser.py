@@ -43,6 +43,10 @@ ovoFilter          = ['INCUBA\xc3\xa7\xc3\xa3O']
 
 condensadoFilter   = ['DESNATADO', 'INTEGRAL']
 
+tapetesFilter      = ['ESCADAS']
+
+somFilter          = ['OUVIDO', 'PARTES']
+
 
 def csvNcmParser(csv_fileUrl, ncm_descript):
     '''
@@ -59,13 +63,16 @@ def csvNcmParser(csv_fileUrl, ncm_descript):
             ncm.cod = int(row[0])
             del row[0]
             fullDescript = ''
+            blank_count  = 0
             for collumn in row:
                 # checking for collumns with more description info
                 # adding to @fullDescript
                 if any((c in chars) for c in collumn):
                     fullDescript = fullDescript+''+collumn
                 else:
-                    break
+                    blank_count = blank_count + 1
+                    if blank_count > 1:
+                        break
                 ncm.descript = fullDescript
 
             if ncm_descript in ncm.descript.upper():
@@ -417,30 +424,41 @@ if __name__ == '__main__':
     # "refrigerante e água mineral" # done
     # "cerveja" # done
     # "outras bebidas alcoólicas" # done
-    # "doces"
-    # "Habitação"
-    # "Encargos e manutenção"
-    # "Aluguel e taxas"
+
+    # pofFinder("doces", [], "amido ou fécula, em folhas,"
+    #                        " e produtos semelhantes.- Outros - Outros") # needs deeper verification
+
+    # Habitação:
+
+    # Encargos e manutenção:
+
+    # Aluguel e taxas:
     # "aluguel residencial"
     # "condomínio"
     # "taxa de água e esgoto"
-    # "Reparos"
-    # "tinta"
+
+    # Reparos:
+    # pofFinder("tinta", [], "- À base de polímeros acrílicos ou vinílicos - Tintas") # needs deeper verification
     # "revestimento de piso e parede"
-    # "cimento"
-    # "tijolo"
+    # pofFinder("cimento", [], "- Cimentos Portland:-- Outros - Cimento comum")
+    # pofFinder("tijolo", [], "- Tijolos para construção")
     # "material hidráulico"
     # "mão de obra"
-    # "areia"
-    # "Artigos de limpeza"
-    # "água sanitária"
-    # "detergente"
-    # "sabão em pó"
-    # "sabão em barra"
-    # "esponja de limpeza"
-    # "Combustíveis e energia"
+    # pofFinder("areia", [], " mesmo coradas, exceto areias metalíferas do Capítulo 26.")
+
+    # Artigos de limpeza:
+
+    # pofFinder("água sanitária", [], "hipoclorito de cálcio comercial")
+    # pofFinder("detergente", [], "- Preparações acondicionadas para venda a retalho") # needs deeper verification
+    # pofFinder("sabão em pó", [], "em barras, pães, pedaços ou figuras moldadas, mesmo que contenham sabão")
+    # pofFinder("sabão em barra", [], "em barras, pães, pedaços ou figuras moldadas, mesmo que contenham sabão")
+    # pofFinder("esponja de limpeza", [], "Artefatos de uso doméstico, e suas partes, de ferro fundido, ferro ou aço")
+    # pofFinder("esponja de limpeza", [], "- Artefatos de uso doméstico e suas partes")
+
+    # "Combustíveis e energia:"
     # "Combustíveis (domésticos)"
-    # "gás de botijão"
+    # pofFinder("gás de botijão", [], "- Liquefeitos:-- Gás natural")
+
     # "Energia elétrica residencial"
     # "Energia elétrica residencial"
     # "Artigos de residência"
@@ -449,54 +467,78 @@ if __name__ == '__main__':
     # "Móvel para sala"
     # "Móvel para quarto"
     # "Móvel para copa e cozinha"
+
     # "Móvel infantil"
-    # "Colchão"
+    # pofFinder("Colchão", [], "- Colchões")
+
     # "Utensílios e enfeites"
-    # "tapete"
-    # "cortina"
+    # pofFinder("tapete", tapetesFilter, "tapetes")
+    #  pofFinder("cortina", [], "cortinas")
+
     # "utensílios de metal"
     # "utensílios de vidro e louça"
     # "utensílios de plástico"
     # "utensílios diversos"
+
     # "Cama, mesa e banho"
-    # "roupa de cama"
-    # "roupa de banho"
-    # "Aparelhos eletroeletrônicos"
-    # "Eletrodomésticos e equipamentos"
-    # "refrigerador"
-    # "máquina de lavar roupa"
-    # "liquidificador"
-    # "ventilador"
-    # "fogão"
+
+    # pofFinder("roupa de cama", [], "- Roupas de cama")
+    # pofFinder("roupa de cama", [], "toucador ou cozinha.- Outras:-- ")
+
+    # pofFinder("roupa de banho", [], "Maiôs, shorts (calções) e sungas de banho, de uso masculino")
+    # pofFinder("roupa de banho", [], "Maiôs e biquínis de banho, de uso feminino")
+
+
+    # Aparelhos eletroeletrônicos:
+
+    # Eletrodomésticos e equipamentos
+    # pofFinder("refrigerador", [], "freezers")
+
+    # pofFinder("máquina de lavar roupa", [], "lavar roupa")
+    # pofFinder("liquidificador", [], "Liquidificadores")
+    # pofFinder("ventilador", [], "com motor elétrico incorporado de potência não superior a 125 W")
+    # pofFinder("fogão", [], "fogões") # needs deeper verification
+
     # "TV, som e informática"
-    # "televisor"
-    # "aparelho de som"
-    # "aparelho de DVD"
-    # "antena"
-    # "microcomputador"
-    # "Consertos e manutenção"
+    # pofFinder("televisor", [], "-- Outros, a cores (policromo)")
+
+    # pofFinder("aparelho de som", somFilter, "aparelhos elétricos de amplificação de som")
+
+    # pofFinder("aparelho de DVD", [], "um receptor de sinais videofônicos.- Outros -")
+
+    # pofFinder("antena", [], "partes reconhecíveis como de utilização conjunta com esses artefatos")
+
+    # pofFinder("microcomputador", [], "Unidades de processamento") # needs deeper verification
+    # pofFinder("microcomputador", [], "Máquinas automáticas para processamento de dados, portáteis") # needs deeper verification
+
+    # Consertos e manutenção:
     # "Consertos e manutenção"
     # "conserto de refrigerador"
     # "conserto de televisor"
     # "conserto de aparelho de som"
     # "reforma de estofado"
-    # "Vestuário"
+
+    # Vestuário:
     # "Roupas"
-    # "Roupa masculina"
-    # "calça comprida masculina"
-    # "short e bermuda masculina"
-    # "cueca"
-    # "camisa/camiseta masculina"
-    # "roupa feminina"
-    # "calça comprida feminina"
-    # "saia"
-    # "vestido"
-    # "blusa"
-    # "lingerie"
-    # "bermuda e short feminino"
-    # "Roupa infantil"
-    # "calça comprida infantil"
-    # "vestido infantil"
+
+    # Roupa masculina
+    # pofFinder("calça comprida masculina", [], "masculino.- Calças, jardineiras, bermudas e shorts (calções)")
+    # pofFinder("short e bermuda masculina", [], "masculino.- Calças, jardineiras, bermudas e shorts (calções)")
+    # pofFinder("cueca", [], "- Cuecas e ceroulas")
+    # pofFinder("camisa/camiseta masculina", [], "Camisas de malha, de uso masculino")
+    # pofFinder("camisa/camiseta masculina", [], "Camisetas, incluindo as interiores")
+
+    # roupa feminina
+    # pofFinder("calça comprida feminina", [], "feminino.- Calças, jardineiras, bermudas e shorts (calções)") # needs deeper verification
+    # pofFinder("saia", [], "de uso feminino.- Saias e saias-calças")
+    # pofFinder("vestido", [], "feminino.- Vestidos")
+    # pofFinder("blusa", [], "chemisiers, de uso feminino")
+    # pofFinder("lingerie", [], "Calcinhas")
+    # pofFinder("bermuda e short feminino", [], "feminino.- Calças, jardineiras, bermudas e shorts (calções)") # needs deeper verification
+
+    # Roupa infantil:
+    pofFinder("calça comprida infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
+    pofFinder("vestido infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
     # "bermuda e short infantil"
     # "camisa/camiseta infantil"
     # "conjunto infantil"
@@ -563,6 +605,8 @@ if __name__ == '__main__':
     # "médico"
     # "dentista"
     # "aparelho ortodôntico"
+
+
     # "Serviços laboratoriais e hospitalares"
     # "exame de laboratório"
     # "hospitalização e cirurgia"
