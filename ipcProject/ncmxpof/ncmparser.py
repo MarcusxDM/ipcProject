@@ -108,7 +108,7 @@ def pofFinder(pof_descript, filter_list, ncm_descript):
             if ncm.cod in ncm_query:
                 print ncm_query
                 print "NCM already linked to POF\n"
-                break
+                pass
             else:
                 ncm_normalized_descript = normalizer(ncm.descript)
                 print "\nNCM KEY WORDS:"
@@ -537,30 +537,45 @@ if __name__ == '__main__':
     # pofFinder("bermuda e short feminino", [], "feminino.- Calças, jardineiras, bermudas e shorts (calções)") # needs deeper verification
 
     # Roupa infantil:
-    pofFinder("calça comprida infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
-    pofFinder("vestido infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
+    # pofFinder("calça comprida infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
+    # pofFinder("vestido infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
     # "bermuda e short infantil"
     # "camisa/camiseta infantil"
     # "conjunto infantil"
+
+    # Calçados e acessórios:
     # "Calçados e acessórios"
-    # "Calçados e acessórios"
-    # "sapato masculino"
-    # "sapato feminino"
-    # "sapato infantil"
-    # "sandália/chinelo masculino"
-    # "sandália/chinelo feminino"
-    # "sandália/chinelo infantil"
-    # "bolsa"
-    # "tênis"
+
+    # pofFinder("sapato masculino", [], "- Calçados")
+    # pofFinder("sapato masculino", [], "- Outros calçados")
+    # pofFinder("sapato masculino", [], "Outros calçados.")
+
+    # pofFinder("sapato infantil", [], "Outros calçados.- Com parte superior de matérias têxteis")
+    # pofFinder("sandália/chinelo masculino", [], "- Calçados com parte superior em tiras ou correias")
+    # pofFinder("sandália/chinelo feminino", [], "- Calçados com parte superior em tiras ou correias")
+    # pofFinder("sandália/chinelo infantil", [], "- Calçados com parte superior em tiras ou correias")
+
+    # pofFinder("bolsa", [], "- Bolsas, mesmo com tiracolo")
+
+    # pofFinder("tênis", [], "Outros calçados.- Com parte superior de matérias têxteis")
+
     # "Jóias e bijuterias"
     # "Jóias e bijuterias"
-    # "bijuteria"
-    # "jóia "
-    # "relógio de pulso"
+
+    # pofFinder("bijuteria", [], "Bijuterias.")
+    # pofFinder("jóia ", [], "Artefatos de joalheria e suas partes")
+    # pofFinder("relógio de pulso", [], "Relógios de pulso")
+
+    # Tecidos e armarinho:
     # "Tecidos e armarinho"
-    # "Tecidos e armarinho"
-    # "tecido "
-    # "artigos de armarinho"
+
+    # pofFinder("tecido ", [], "em forma própria, não bordados.- Tecidos")
+
+    # pofFinder("artigos de armarinho", [], "em forma própria, não bordados.- Outros")
+    # pofFinder("artigos de armarinho", [], "Linhas para costurar")
+    # pofFinder("artigos de armarinho", [], "botões de pressão")
+    # pofFinder("artigos de armarinho", [], "Agulhas de costura")
+
     # "Transportes"
     # "Transportes"
     # "Transporte público"
@@ -569,29 +584,47 @@ if __name__ == '__main__':
     # "ônibus intermunicipal"
     # "ônibus intererstadual"
     # "passagem aérea"
+
     # "Veículo próprio"
-    # "automóvel novo"
+    # pofFinder("automóvel novo", [], "pistão alternativo de ignição por centelha:--") # needs deeper verification
+
     # "emplacamento e licença"
-    # "óleo lubrificante"
-    # "acessórios e peças"
-    # "pneu"
+
+    # pofFinder("óleo lubrificante", [], " básicos, 70 % ou mais, em peso, de óleos de petróleo"
+    #                                    " ou de minerais betuminosos")
+
+    # pofFinder("acessórios e peças", [], "Partes e acessórios dos veículos")
+
+    # pofFinder("pneu", [], "Dos tipos utilizados em automóveis de passageiros")
+    # pofFinder("pneu", [], "Dos tipos utilizados em motocicletas")
+
     # "conserto de automóvel"
-    # "automóvel usado"
-    # "motocicleta"
+    # pofFinder("automóvel usado", [], "pistão alternativo de ignição por centelha:--") # needs deeper verification
+
+    # pofFinder("motocicleta", [], "pistão alternativo de ignição por centelha:--") # needs deeper verification
+
     # "Combustíveis (veículos)"
-    # "gasolina"
-    # "etanol"
-    # "gás veicular"
-    # "Saúde e cuidados pessoais"
+    # pofFinder("gasolina", [], " básicos, 70 % ou mais, em peso, de óleos de petróleo"
+    #                           " ou de minerais betuminosos")
+    # pofFinder("etanol", [], " básicos, 70 % ou mais, em peso, de óleos de petróleo"
+    #                         " ou de minerais betuminosos")
+    # pofFinder("gás veicular", [], "- No estado gasoso:-- Gás natural")
+
+    # Saúde e cuidados pessoais:
+
     # "Produtos farmacêuticos e óticos"
     # "Produtos farmacêuticos  "
-    # "anti-infeccioso e antibiótico"
-    # "analgésico e antitérmico"
-    # "anti-inflamatório e antirreumático"
-    # "antigripal e antitussígeno"
-    # "dermatológico"
-    # "antialérgico e broncodilatador"
-    # "gastroprotetor"
+
+    # pofFinder("anti-infeccioso e antibiótico", [], "Antibióticos.-")
+    # pofFinder("analgésico e antitérmico", [], "acondicionados para venda a retalho.- Outros - Outros")
+    # pofFinder("anti-inflamatório e antirreumático", [], "acondicionados para venda a retalho.- Outros - Outros")
+    # pofFinder("antigripal e antitussígeno", [], "acondicionados para venda a retalho.- Outros - Outros")
+
+    # pofFinder("dermatológico", [], "acondicionados para venda a retalho.- Outros - Outros")
+    #
+    # pofFinder("antialérgico e broncodilatador", [], "acondicionados para venda a retalho.- Outros - Outros")
+    # pofFinder("gastroprotetor", [], "-- Outros - Omeprazol")
+
     # "vitamina e fortificante"
     # "hormônio"
     # "psicotrópico e anorexígeno"
