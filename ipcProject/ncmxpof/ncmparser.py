@@ -228,7 +228,7 @@ if __name__ == '__main__':
     # pofFinder("fígado", [], "Miudezas comestíveis de animais das espécies bovina, suína, ovina, caprina, cavalar,"
     #                         " asinina e muar, frescas, refrigeradas ou congeladas.- Da espécie bovina, congeladas:"
     #                         "-- Fígados")
-    # Fígado Suíno:
+    # Fígado Suíno
     # pofFinder("fígado", [], "Miudezas comestíveis de animais das espécies bovina, suína, ovina, caprina, cavalar,"
     #                         " asinina e muar, frescas, refrigeradas ou congeladas.-Outros- Da espécie suína,"
     #                         " congeladas:-- Fígados")
@@ -384,7 +384,7 @@ if __name__ == '__main__':
 
     # pofFinder("cerveja", [], "Cervejas de malte.")
 
-    # "outras bebidas alcoólicas"
+    # outras bebidas alcoólicas
     # pofFinder("outras bebidas alcoólicas", [], "misturas de bebidas fermentadas com bebidas não alcoólicas,"
     #                                            " não especificadas nem compreendidas noutras posições.")
     #
@@ -428,6 +428,7 @@ if __name__ == '__main__':
     # pofFinder("doces", [], "amido ou fécula, em folhas,"
     #                        " e produtos semelhantes.- Outros - Outros") # needs deeper verification
 
+
     # Habitação:
 
     # Encargos e manutenção:
@@ -439,11 +440,14 @@ if __name__ == '__main__':
 
     # Reparos:
     # pofFinder("tinta", [], "- À base de polímeros acrílicos ou vinílicos - Tintas") # needs deeper verification
-    # "revestimento de piso e parede"
+    # pofFinder("revestimento de piso e parede", [], "- Papel de parede e revestimentos de parede semelhantes")
     # pofFinder("cimento", [], "- Cimentos Portland:-- Outros - Cimento comum")
     # pofFinder("tijolo", [], "- Tijolos para construção")
-    # "material hidráulico"
+    # pofFinder("material hidráulico", [], "Acessórios para tubos")
+    # pofFinder("material hidráulico", [], "Tubos e perfis ocos, de ferro fundido")
+
     # "mão de obra"
+
     # pofFinder("areia", [], " mesmo coradas, exceto areias metalíferas do Capítulo 26.")
 
     # Artigos de limpeza:
@@ -461,6 +465,7 @@ if __name__ == '__main__':
 
     # "Energia elétrica residencial"
     # "Energia elétrica residencial"
+
     # "Artigos de residência"
     # "Móveis e utensílios"
     # "Mobiliário"
@@ -473,12 +478,21 @@ if __name__ == '__main__':
 
     # "Utensílios e enfeites"
     # pofFinder("tapete", tapetesFilter, "tapetes")
-    #  pofFinder("cortina", [], "cortinas")
+    # pofFinder("cortina", [], "cortinas")
 
-    # "utensílios de metal"
-    # "utensílios de vidro e louça"
-    # "utensílios de plástico"
-    # "utensílios diversos"
+    # pofFinder("utensílios de metal", [], "- Outros:-- Outros - De aço inoxidável")
+    #
+    # pofFinder("utensílios de vidro e louça", [], "- Artigos para serviço de mesa ou de cozinha")
+    # pofFinder("utensílios de vidro e louça", [], "de porcelana.- Outros")
+    # pofFinder("utensílios de vidro e louça", [], "toucador, de cerâmica, exceto de porcelana")
+    # pofFinder("utensílios de vidro e louça", [], "ornamentação de interiores ou usos semelhantes"
+    #                                              " (exceto os das posições 70.10 ou 70.18)")
+    #
+    # pofFinder("utensílios de plástico", [], "Serviços de mesa e outros artigos de uso doméstico,"
+    #                                         " de higiene ou de toucador, de plásticos")
+    #
+    # pofFinder("utensílios diversos", [], "- Sortidos que contenham pelo menos"
+    #                                      " um objeto prateado, dourado ou platinado")
 
     # "Cama, mesa e banho"
 
@@ -519,7 +533,7 @@ if __name__ == '__main__':
     # "reforma de estofado"
 
     # Vestuário:
-    # "Roupas"
+    # Roupas
 
     # Roupa masculina
     # pofFinder("calça comprida masculina", [], "masculino.- Calças, jardineiras, bermudas e shorts (calções)")
@@ -539,8 +553,8 @@ if __name__ == '__main__':
     # Roupa infantil:
     # pofFinder("calça comprida infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
     # pofFinder("vestido infantil", [], "Vestuário e seus acessórios, para bebês") # needs deeper verification
-    # "bermuda e short infantil"
-    # "camisa/camiseta infantil"
+    # pofFinder("bermuda e short infantil", [], "Vestuário e seus acessórios, para bebês")
+    # pofFinder("camisa/camiseta infantil", [], "Vestuário e seus acessórios, para bebês")
     # "conjunto infantil"
 
     # Calçados e acessórios:
@@ -625,14 +639,24 @@ if __name__ == '__main__':
     # pofFinder("antialérgico e broncodilatador", [], "acondicionados para venda a retalho.- Outros - Outros")
     # pofFinder("gastroprotetor", [], "-- Outros - Omeprazol")
 
-    # "vitamina e fortificante"
-    # "hormônio"
-    # "psicotrópico e anorexígeno"
-    # "hipotensor e hipocolesterolêmico"
-    # "oftalmológico"
-    # "Produtos óticos"
-    # "óculos sem grau"
-    # "lentes de óculos e de contato"
+    # pofFinder("vitamina e fortificante", [], "- OutrasComplementos alimentares")
+    # pofFinder("vitamina e fortificante", [], "- Concentrados de proteínas e substâncias proteicas texturizadas")
+    # pofFinder("vitamina e fortificante", [], "não misturados:-- Vitamina")
+
+    # pofFinder("hormônio", [], "- Que contenham hormônio")
+    #
+    # pofFinder("psicotrópico e anorexígeno", [], "- Outros - Alprazolam")
+    # pofFinder("psicotrópico e anorexígeno", [], "dietilpropiona")
+
+    # pofFinder("hipotensor e hipocolesterolêmico", [], "- Outros - Atenolol")
+
+    # pofFinder("oftalmológico", [], "-- Carboximetilcelulose e seus sais")
+
+    # Produtos óticos:
+    # pofFinder("óculos sem grau", [], "- Óculos de sol")
+    #
+    # pofFinder("lentes de óculos e de contato", [], "Fibras ópticas e feixes de fibras ópticas") # 9001.30.00 e 9001.50.00
+
     # "Serviços de saúde"
     # "Serviços médicos e dentários"
     # "médico"
@@ -644,22 +668,36 @@ if __name__ == '__main__':
     # "exame de laboratório"
     # "hospitalização e cirurgia"
     # "exame de imagem"
-    # "Plano de saúde"
+
+    # Plano de saúde:
     # "plano de saúde"
-    # "Cuidados pessoais"
-    # "Higiene pessoal"
-    # "produto para cabelo"
-    # "fralda descartável"
-    # "produto para pele"
-    # "produto para higiene bucal"
-    # "produto para unha"
-    # "perfume"
-    # "desodorante"
-    # "absorvente higiênico"
-    # "sabonete"
-    # "papel higiênico"
-    # "artigos de maquiagem"
-    # "Despesas pessoais"
+    # Cuidados pessoais:
+
+    # Higiene pessoal
+
+    # pofFinder("produto para cabelo", [], "Preparações capilares")
+
+    # pofFinder("fralda descartável", [], "Absorventes e tampões higiênicos")
+
+    # pofFinder("produto para pele", [], "pedicuros.- Outros:--")
+
+    # pofFinder("produto para higiene bucal", [], "Preparações para higiene bucal ou dentária") # 9603.21.00
+
+    # pofFinder("produto para unha", [], "- Preparações para manicuros e pedicuros")
+
+    # pofFinder("perfume", [], "Perfumes e águas-de-colônia")
+
+    # pofFinder("desodorante", [], "- Desodorantes (desodorizantes) corporais e antiperspirantes")
+
+    # pofFinder("absorvente higiênico", [], "Absorventes e tampões higiênicos")
+
+    # pofFinder("sabonete", [], "utilizados como sabão") # 3401.11.90
+
+    # pofFinder("papel higiênico", [], "- Papel higiênico")
+
+    # pofFinder("artigos de maquiagem", [], "Produtos de maquiagem")
+
+    # Despesas pessoais:
     # "Serviços pessoais"
     # "Serviços pessoais"
     # "costureira"
@@ -668,50 +706,75 @@ if __name__ == '__main__':
     # "empregado doméstico"
     # "cartório"
     # "serviço bancário"
-    # "Recreação, fumo e fotografia"
+
+    # Recreação, fumo e fotografia:
     # "Recreação  "
     # "cinema"
-    # "CD e DVD"
+
+    # pofFinder("CD e DVD", [], "- Suportes ópticos:-- Outros - Para reprodução")
+
     # "tratamento de animais"
-    # "bicicleta"
-    # "alimento para animais"
-    # "brinquedo"
+
+    # pofFinder("bicicleta", [], "- Bicicletas")
+
+    # pofFinder("alimento para animais", [], "- Alimentos para cães ou gatos")
+    # pofFinder("brinquedo", [], "quebra-cabeças (puzzles) de qualquer tipo")
+
     # "locação de DVD"
     # "festas diversas"
     # "jogos de azar"
     # "hotel"
-    # "Fumo"
-    # "cigarro"
-    # "Fotografia e filmagem"
-    # "máquina fotográfica"
+
+    # Fumo:
+    # pofFinder("cigarro", [], "- Cigarros que contenham tabaco")
+
+    # Fotografia e filmagem:
+    # pofFinder("máquina fotográfica", [], "- Câmeras de televisão, câmeras fotográficas digitais e câmeras de vídeo")
     # "revelação e cópia"
-    # "Educação"
-    # "Cursos, leitura e papelaria"
-    # "Cursos regulares"
+
+    # Educação:
+    # Cursos, leitura e papelaria
+    # Cursos regulares
     # "creche"
     # "educação infantil"
     # "ensino fundamental"
     # "ensino médio"
     # "ensino superior"
     # "pós-graduação"
-    # "Leitura"
-    # "revista"
-    # "livro"
+
+    # Leitura:
+    # pofFinder("revista", [], "mesmo ilustrados ou que contenham publicidade")
+    # pofFinder("livro", [], "Livros, brochuras e impressos semelhantes")
+
     # "Papelaria"
-    # "caderno"
+    # pofFinder("caderno", [], "capas para livros, de papel ou cartão.- Cadernos")
     # "fotocópia"
-    # "artigos de papelaria"
+    # pofFinder("artigos de papelaria", [], "Papel e cartão")
+    # pofFinder("artigos de papelaria", [], "Tesouras e suas lâminas")
+    # pofFinder("artigos de papelaria", [], "- Máquinas para apontar lápis,"
+    #                                       " perfuradores, grampeadores e desgrampeadores")
+    # pofFinder("artigos de papelaria", [], "exceto os artigos da posição 96.09.-")
+    # pofFinder("artigos de papelaria", [], "bonecas e rolos para pintura")
+
+
+
     # "Cursos diversos"
     # "curso preparatório"
     # "curso de informática"
     # "atividades físicas"
+
     # "Comunicação"
     # "Comunicação"
     # "Comunicação"
-    # "telefone fixo"
-    # "telefone celular"
+    # pofFinder("telefone fixo", [], "-- Aparelhos telefônicos por fio com unidade auscultador-microfone sem fio")
+    # pofFinder("telefone fixo", [], "para outras redes sem fio - Fixos, sem fonte própria de energia")
+    # pofFinder("telefone celular", [], "-- Telefones para redes celulares e para outras redes sem fio - Portáteis")
+
     # "acesso à internet"
     # "aparelho telefônico"
+    # pofFinder("aparelho telefônico", [], "-- Aparelhos telefônicos por fio com unidade auscultador-microfone sem fio")
+    # pofFinder("aparelho telefônico", [], "para outras redes sem fio - Fixos, sem fonte própria de energia")
+    # pofFinder("aparelho telefônico", [], "-- Telefones para redes celulares e para outras redes sem fio - Portáteis")
     # "telefone com internet - pacote"
 
 

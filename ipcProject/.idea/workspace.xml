@@ -4,7 +4,6 @@
     <list default="true" id="f4a5ed8a-9917-47f0-8622-dd26c7924d8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SEPLAGsite" afterPath="$PROJECT_DIR$/../SEPLAGsite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ncmxpof/ncmparser.py" afterPath="$PROJECT_DIR$/ncmxpof/ncmparser.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ipcProject$ncmparser.coverage" NAME="ncmparser Coverage Results" MODIFIED="1512417410284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ncmxpof" />
+    <SUITE FILE_PATH="coverage/ipcProject$ncmparser.coverage" NAME="ncmparser Coverage Results" MODIFIED="1512491429508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ncmxpof" />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
@@ -34,8 +33,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ncmxpof/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            <state relative-caret-position="18">
+              <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding>
                 <element signature="e#53#92#0" expanded="true" />
               </folding>
@@ -47,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/ncmxpof/ncmparser.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="278">
-              <caret line="627" column="4" lean-forward="false" selection-start-line="627" selection-start-column="4" selection-end-line="627" selection-end-column="4" />
+              <caret line="774" column="6" lean-forward="false" selection-start-line="774" selection-start-column="6" selection-end-line="774" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -56,8 +55,8 @@
       <file leaf-file-name="Tabela_NCM.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ncmxpof/ncmtable/Tabela_NCM.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="2972" column="177" lean-forward="true" selection-start-line="2972" selection-start-column="177" selection-end-line="2972" selection-end-column="198" />
+            <state relative-caret-position="125">
+              <caret line="4728" column="9" lean-forward="false" selection-start-line="4728" selection-start-column="9" selection-end-line="4728" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -67,36 +66,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>64022000</find>
-      <find>42022</find>
-      <find>Bijuterias.</find>
-      <find>Artefatos de joalheria e suas partes</find>
-      <find>relógios de pulso</find>
-      <find>58071000</find>
-      <find>em forma própria, não bordados.- Tecidos</find>
-      <find>5204</find>
-      <find>Linhas para costurar</find>
-      <find>Botões</find>
-      <find>botões de pressão</find>
-      <find>7319</find>
-      <find>Agulhas de costura</find>
-      <find>pistão alternativo de ignição por centelha:--</find>
-      <find>Óleos de petróleo ou de minerais betuminosos</find>
-      <find>2710193</find>
-      <find>Partes e acessórios dos veículos</find>
-      <find>40111000</find>
-      <find>Dos tipos utilizados em motocicletas</find>
-      <find>2710125</find>
-      <find>- No estado gasoso:-- Gás natural</find>
-      <find>2941</find>
-      <find>Antibióticos.-</find>
-      <find>acondicionados para venda a retalho.- Outros - Outros</find>
-      <find>30049029</find>
-      <find>30039079</find>
-      <find>contenham vitaminas ou outros produtos da posição 29.36 - Outros</find>
-      <find>30049099</find>
-      <find>300450</find>
-      <find>29333946</find>
+      <find>24022000</find>
+      <find>8525802</find>
+      <find>- Câmeras de televisão, câmeras fotográficas digitais e câmeras de vídeo</find>
+      <find>49029000</find>
+      <find>Livros, brochuras e impressos semelhantes</find>
+      <find>cadernos</find>
+      <find>capas para livros, de papel ou cartão.- Cadernos</find>
+      <find>revistas</find>
+      <find>publica</find>
+      <find>Papel e cartão</find>
+      <find>tesoura</find>
+      <find>lápis</find>
+      <find>- Lapiseiras</find>
+      <find>exceto os artigos da posição 96.09.- Outros:-- Outros</find>
+      <find>exceto os artigos da posição 96.09.-</find>
+      <find>bonecas e rolos para pintura</find>
+      <find>celular</find>
+      <find>celulares</find>
+      <find>85171231</find>
+      <find>85171100</find>
+      <find>- Papel de parede e revestimentos de parede semelhantes</find>
+      <find>Acessórios para tubos</find>
+      <find>Tubos e perfis ocos, de ferro fundido</find>
+      <find>- Sortidos que contenham pelo menos um objeto prateado, dourado ou platinado</find>
+      <find>- Outros:-- Outros - De aço inoxidável</find>
+      <find>- Artigos para serviço de mesa ou de cozinha</find>
+      <find>de porcelana.- Outros</find>
+      <find>7013</find>
+      <find>3924</find>
+      <find>39241000</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,8 +110,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ipcProject/settings.py" />
-        <option value="$PROJECT_DIR$/ncmxpof/ncmtable/Tabela_NCM.csv" />
         <option value="$PROJECT_DIR$/ncmxpof/models.py" />
+        <option value="$PROJECT_DIR$/ncmxpof/ncmtable/Tabela_NCM.csv" />
         <option value="$PROJECT_DIR$/ncmxpof/ncmparser.py" />
       </list>
     </option>
@@ -246,13 +245,13 @@
     <frame x="150" y="113" width="1373" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16023307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1791697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43024772" sideWeight="0.1427531" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43024772" sideWeight="0.14785142" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43024772" sideWeight="0.8572469" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43024772" sideWeight="0.8521486" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -283,6 +282,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ncmxpof/ncmtable/Tabela_NCM.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53496">
+          <caret line="2972" column="177" lean-forward="true" selection-start-line="2972" selection-start-column="177" selection-end-line="2972" selection-end-column="198" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ncmxpof/ncmparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11286">
+          <caret line="627" column="4" lean-forward="false" selection-start-line="627" selection-start-column="4" selection-end-line="627" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ipcProject/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1476">
@@ -663,8 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ncmxpof/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        <state relative-caret-position="18">
+          <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
           <folding>
             <element signature="e#53#92#0" expanded="true" />
           </folding>
@@ -673,8 +688,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ncmxpof/ncmtable/Tabela_NCM.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="2972" column="177" lean-forward="true" selection-start-line="2972" selection-start-column="177" selection-end-line="2972" selection-end-column="198" />
+        <state relative-caret-position="125">
+          <caret line="4728" column="9" lean-forward="false" selection-start-line="4728" selection-start-column="9" selection-end-line="4728" selection-end-column="100" />
           <folding />
         </state>
       </provider>
@@ -682,7 +697,7 @@
     <entry file="file://$PROJECT_DIR$/ncmxpof/ncmparser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
-          <caret line="627" column="4" lean-forward="false" selection-start-line="627" selection-start-column="4" selection-end-line="627" selection-end-column="4" />
+          <caret line="774" column="6" lean-forward="false" selection-start-line="774" selection-start-column="6" selection-end-line="774" selection-end-column="6" />
           <folding />
         </state>
       </provider>
