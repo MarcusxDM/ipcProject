@@ -121,6 +121,38 @@ def pofFinder(pof_descript, filter_list, ncm_descript):
                     new_ncm.pof = pof
                     new_ncm.save()
 
+def pofFinderById(ncm_cod, pof_descript, csv_fileUrl):
+    ncm      = Ncm()
+    with open(csv_fileUrl) as csv_file:
+        spamreader = csv.reader(csv_file, delimiter=';')
+        # Going from row to row in the csv_file
+        for row in spamreader:
+            ncm.cod = int(row[0])
+            if ncm_cod == ncm.cod:
+                del row[0]
+                fullDescript = ''
+                blank_count = 0
+                for collumn in row:
+                    # checking for collumns with more description info
+                    # adding to @fullDescript
+                    if any((c in chars) for c in collumn):
+                        fullDescript = fullDescript + '' + collumn
+                    else:
+                        blank_count = blank_count + 1
+                        if blank_count > 1:
+                            break
+                    ncm.descript = fullDescript
+                ncm.cod = ncm_cod
+                new_ncm = ncmRefresher(ncm)
+                pof = Pof.objects.get(descript=pof_descript)
+                new_ncm.pof = pof
+                print "NCM: ", ncm.cod, ncm.descript
+                print "POF: ", pof.cod, pof.descript
+                new_ncm.save()
+
+
+
+
 def normalizer(string):
     string = string.upper().replace('(', ' ').replace(')', ' ').replace(':', '')
     string_list = string.replace(',', '').replace('-', '').replace('.', '').split()
@@ -461,7 +493,7 @@ if __name__ == '__main__':
 
     # "Combustíveis e energia:"
     # "Combustíveis (domésticos)"
-    # pofFinder("gás de botijão", [], "- Liquefeitos:-- Gás natural")
+    # pofFinder("gás de botijão", [], "- Liquefeitos:-- Outros - Gás liquefeito de petróleo (GLP)")
 
     # "Energia elétrica residencial"
     # "Energia elétrica residencial"
@@ -469,11 +501,42 @@ if __name__ == '__main__':
     # "Artigos de residência"
     # "Móveis e utensílios"
     # "Mobiliário"
+
     # "Móvel para sala"
+    # pofFinder("Móvel para quarto", [], "- Outros móveis de madeira")
+    # pofFinder("Móvel para quarto", [], "- Móveis de plásticos")
+    # pofFinder("Móvel para quarto", [], "- Móveis de outras matérias, incluindo o rotim, vime, bambu "
+    #                                    "ou matérias semelhantes:")
+    # pofFinder("Móvel para quarto", [], "- Outros móveis de metal")
+
     # "Móvel para quarto"
+    # pofFinder("Móvel para quarto", [], "- Móveis de madeira, do tipo utilizado em quartos de dormir")
+    # pofFinder("Móvel para quarto", [], "- Móveis de madeira, do tipo utilizado em escritórios")
+    # pofFinder("Móvel para quarto", [], "- Móveis de metal, do tipo utilizado em escritórios")
+    # pofFinder("Móvel para quarto", [], "- Outros móveis de madeira")
+    # pofFinder("Móvel para quarto", [], "- Móveis de plásticos")
+    # pofFinder("Móvel para quarto", [], "- Móveis de outras matérias, incluindo o rotim, vime, bambu "
+    #                                    "ou matérias semelhantes:")
+    # pofFinder("Móvel para quarto", [], "- Outros móveis de metal")
+
     # "Móvel para copa e cozinha"
+    # pofFinder("Móvel para copa e cozinha", [], "- Móveis de madeira, do tipo utilizado em cozinhas")
+    # pofFinder("Móvel para copa e cozinha", [], "- Outros móveis de madeira")
+    # pofFinder("Móvel para copa e cozinha", [], "- Móveis de plásticos")
+    # pofFinder("Móvel para copa e cozinha", [], "- Móveis de outras matérias, incluindo o rotim, vime, bambu "
+    #                                            "ou matérias semelhantes:")
+    # pofFinder("Móvel para copa e cozinha", [], "- Outros móveis de metal")
 
     # "Móvel infantil"
+    # pofFinder("Móvel infantil", [], "- Móveis de madeira, do tipo utilizado em quartos de dormir")
+    # pofFinder("Móvel infantil", [], "- Móveis de madeira, do tipo utilizado em escritórios")
+    # pofFinder("Móvel infantil", [], "- Móveis de metal, do tipo utilizado em escritórios")
+    # pofFinder("Móvel infantil", [], "- Outros móveis de madeira")
+    # pofFinder("Móvel infantil", [], "- Móveis de plásticos")
+    # pofFinder("Móvel infantil", [], "- Móveis de outras matérias, incluindo o rotim, vime, bambu "
+    #                                    "ou matérias semelhantes:")
+    # pofFinder("Móvel infantil", [], "- Outros móveis de metal")
+
     # pofFinder("Colchão", [], "- Colchões")
 
     # "Utensílios e enfeites"
@@ -655,8 +718,10 @@ if __name__ == '__main__':
     # Produtos óticos:
     # pofFinder("óculos sem grau", [], "- Óculos de sol")
     #
-    # pofFinder("lentes de óculos e de contato", [], "Fibras ópticas e feixes de fibras ópticas") # 9001.30.00 e 9001.50.00
-
+    # pofFinderById(ncm_cod=90013000, pof_descript="lentes de óculos e de contato",
+    #               csv_fileUrl="ncmtable/Tabela_NCM.csv") # 9001.30.00
+    # pofFinderById(ncm_cod=90015000, pof_descript="lentes de óculos e de contato",
+    #               csv_fileUrl="ncmtable/Tabela_NCM.csv") # e 9001.50.00
     # "Serviços de saúde"
     # "Serviços médicos e dentários"
     # "médico"
@@ -681,7 +746,7 @@ if __name__ == '__main__':
 
     # pofFinder("produto para pele", [], "pedicuros.- Outros:--")
 
-    # pofFinder("produto para higiene bucal", [], "Preparações para higiene bucal ou dentária") # 9603.21.00
+    # pofFinderById(96032100, "produto para higiene bucal", "ncmtable/Tabela_NCM.csv") # 9603.21.00
 
     # pofFinder("produto para unha", [], "- Preparações para manicuros e pedicuros")
 
@@ -691,7 +756,7 @@ if __name__ == '__main__':
 
     # pofFinder("absorvente higiênico", [], "Absorventes e tampões higiênicos")
 
-    # pofFinder("sabonete", [], "utilizados como sabão") # 3401.11.90
+    # pofFinderById(34011190, "utilizados como sabão", "ncmtable/Tabela_NCM.csv") # 3401.11.90
 
     # pofFinder("papel higiênico", [], "- Papel higiênico")
 
